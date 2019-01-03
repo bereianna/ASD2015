@@ -43,7 +43,35 @@ namespace ASD
 
             // trebuie scrisa o secventa liniara care determina cate perechi de numere din vectorul arr au suma 0
             // TODO
+            int j = arr.Length - 1;
+            i = 0;
+            while(i<j)
+            {
+                if(arr[i]+arr[j]==0&&arr[i]<0&&arr[j]>0)
+                {
+                    contor++;
+                    j--;
+                    i++;
+                }else
+                {
+                    if (arr[i] + arr[j] < 0 && arr[i] < 0 && arr[j] > 0)
+                    {
+                        i++;
 
+                    }else
+                    {
+                        if (arr[i] + arr[j] > 0 && arr[i] < 0 && arr[j] > 0)
+                        {
+                            j--;
+                        }
+                        else
+                        {
+                            break; //no pair
+                        }
+
+                    }
+                }
+            }
             return contor;
         }
         public static void Main(string[] args)
